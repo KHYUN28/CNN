@@ -58,45 +58,48 @@
 
 ## Course summary
 
+이 과정은 컨볼루션 신경망을 구축하고 이미지 데이터에 적용하는 방법을 가르쳐줍니다. 딥 러닝 덕분에 컴퓨터 비전은 두 년 전보다 훨씬 더 효과적으로 작동하고 안전한 자율 주행부터 정확한 얼굴 인식, 방사선 영상의 자동 읽기까지 다양한 흥미로운 응용 프로그램을 가능하게 합니다.
+
+다음을 배우게 됩니다:
+
+잔여 신경망과 같은 최근 변형을 포함하여 컨볼루션 신경망을 구축하는 방법을 이해합니다.
+컨볼루션 네트워크를 시각적 감지 및 인식 작업에 적용하는 방법을 알게 됩니다.
+예술을 생성하기 위해 신경 스타일 전이를 사용하는 방법을 알게 됩니다.
+이러한 알고리즘을 다양한 이미지, 비디오 및 기타 2D 또는 3D 데이터에 적용할 수 있습니다.
+이것은 딥 러닝 특화 과정의 네 번째 과정입니다.
 
 
-> This course will teach you how to build convolutional neural networks and apply it to image data. Thanks to deep learning, computer vision is working far better than just two years ago, and this is enabling numerous exciting applications ranging from safe autonomous driving, to accurate face recognition, to automatic reading of radiology images. 
->
-> You will:
-> - Understand how to build a convolutional neural network, including recent variations such as residual networks.
-> - Know how to apply convolutional networks to visual detection and recognition tasks.
-> - Know to use neural style transfer to generate art.
-> - Be able to apply these algorithms to a variety of image, video, and other 2D or 3D data.
->
-> This is the fourth course of the Deep Learning Specialization.
+## CNN의 기초
 
+> CNN의 기본 레이어(풀링, 합성곱)를 구현하고, 다중 클래스 이미지 분류 문제를 해결하기 위해 깊은 신경망에서 올바르게 쌓는 방법을 배우실 것입니다.
 
+### 컴퓨터 비전
 
-## Foundations of CNNs
+- 딥 러닝 덕분에 빠르게 활발한 응용 분야 중 하나인 컴퓨터 비전입니다.
 
-> Learn to implement the foundational layers of CNNs (pooling, convolutions) and to stack them properly in a deep network to solve multi-class image classification problems.
+- 딥 러닝을 사용하는 컴퓨터 비전의 응용 분야 중 일부는 다음과 같습니다:
+  - 자율 주행 자동차.
+  - 얼굴 인식.
 
-### Computer vision
+- 딥 러닝은 새로운 종류의 예술을 만들 수 있도록 하고 있습니다.
+- 컴퓨터 비전의 급속한 변화로 인해 몇 년 전에는 불가능했던 새로운 응용 프로그램이 가능해지고 있습니다.
 
-- Computer vision is one of the applications that are rapidly active thanks to deep learning.
-- Some of the applications of computer vision that are using deep learning includes:
-  - Self driving cars.
-  - Face recognition.
-- Deep learning is also enabling new types of art to be created.
-- Rapid changes to computer vision are making new applications that weren't possible a few years ago.
-- Computer vision deep leaning techniques are always evolving making a new architectures which can help us in other areas other than computer vision.
-  - For example, Andrew Ng took some ideas of computer vision and applied it in speech recognition.
-- Examples of a computer vision problems includes:
-  - Image classification.
-  - Object detection.
-    - Detect object and localize them.
-  - Neural style transfer
-    - Changes the style of an image using another image.
-- One of the challenges of computer vision problem that images can be so large and we want a fast and accurate algorithm to work with that.
-  - For example, a `1000x1000` image will represent 3 million feature/input to the full connected neural network. If the following hidden layer contains 1000, then we will want to learn weights of the shape `[1000, 3 million]` which is 3 billion parameter only in the first layer and thats so computationally expensive!
-- One of the solutions is to build this using **convolution layers** instead of the **fully connected layers**.
+- 컴퓨터 비전 딥 러닝 기술은 항상 진화하며 컴퓨터 비전 이외의 다른 영역에서도 도움이 되는 새로운 아키텍처를 만들고 있습니다.
+  - 예를 들어, Andrew Ng는 컴퓨터 비전의 일부 아이디어를 차용하여 음성 인식에 적용했습니다.
 
-### Edge detection example
+- 컴퓨터 비전 문제의 예시는 다음과 같습니다:
+  - 이미지 분류.
+  - 물체 감지.
+    - 물체 감지 및 그 위치를 파악합니다.
+  - 신경 스타일 전이
+    - 다른 이미지를 사용하여 이미지의 스타일을 변경합니다.
+
+- 컴퓨터 비전 문제의 한 가지 어려움은 이미지가 매우 크다는 것이며, 빠르고 정확한 알고리즘을 사용해야 한다는 것입니다.
+- 
+  - 예를 들어, 1000x1000 크기의 이미지는 완전히 연결된 신경망에 3백만개의 특성/입력을 나타냅니다. 다음 은닉층에 1000개가 포함된 경우, 첫 번째 레이어에는 30억 개의 매개변수를 학습해야 합니다. 이는 계산적으로 매우 비싼 작업입니다!
+이 문제의 해결책 중 하나는 완전 연결 레이어 대신 합성곱 레이어를 사용하여 모델을 구축하는 것입니다.
+
+### 엣지 검출 예제
 
 - The convolution operation is one of the fundamentals blocks of a CNN. One of the examples about convolution is the image edge detection operation.
 - Early layers of CNN might detect edges then the middle layers will detect parts of objects and the later layers will put the these parts together to produce an output.
